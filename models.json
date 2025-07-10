@@ -1,0 +1,178 @@
+{
+  "models": {
+    "smollm2": {
+      "base_name": "SmolLM2",
+      "variants": {
+        "135M-Q2_K": {"params": "135M", "quant": "Q2_K", "vram": 0.34, "ram": 0.5},
+        "135M-Q4_0": {"params": "135M", "quant": "Q4_0", "vram": 0.35, "ram": 0.6},
+        "135M-Q4_K_M": {"params": "135M", "quant": "Q4_K_M", "vram": 0.36, "ram": 0.6},
+        "135M-F16": {"params": "135M", "quant": "F16", "vram": 0.51, "ram": 0.8},
+        "360M-Q4_0": {"params": "360M", "quant": "Q4_0", "vram": 0.59, "ram": 0.9},
+        "360M-Q4_K_M": {"params": "360M", "quant": "Q4_K_M", "vram": 0.63, "ram": 1.0},
+        "360M-F16": {"params": "360M", "quant": "F16", "vram": 1.06, "ram": 1.5}
+      },
+      "context": 8000,
+      "scores": {"knowledge": 2, "math": 1, "code": 2, "reasoning": 2, "language": 3, "multilingual": 1},
+      "tools": true,
+      "languages": ["English"],
+      "docker": "ai/smollm2"
+    },
+    "gemma3": {
+      "base_name": "Gemma3",
+      "variants": {
+        "1B-Q4_K_M": {"params": "1B", "quant": "Q4_K_M", "vram": 1.40, "ram": 2.0},
+        "1B-F16": {"params": "1B", "quant": "F16", "vram": 2.51, "ram": 3.5},
+        "4B-Q4_0": {"params": "4B", "quant": "Q4_0", "vram": 3.32, "ram": 4.5},
+        "4B-Q4_K_M": {"params": "4B", "quant": "Q4_K_M", "vram": 3.43, "ram": 4.8},
+        "4B-F16": {"params": "4B", "quant": "F16", "vram": 8.35, "ram": 10.0}
+      },
+      "context": 131000,
+      "scores": {"knowledge": 3, "math": 2, "code": 2, "reasoning": 3, "language": 3, "multilingual": 4},
+      "tools": true,
+      "languages": ["140+ languages"],
+      "docker": "ai/gemma3",
+      "features": ["multimodal"]
+    },
+    "llama3.2": {
+      "base_name": "Llama 3.2",
+      "variants": {
+        "1B-Q4_0": {"params": "1B", "quant": "Q4_0", "vram": 1.35, "ram": 2.0},
+        "1B-Q8_0": {"params": "1B", "quant": "Q8_0", "vram": 1.87, "ram": 2.5},
+        "1B-F16": {"params": "1B", "quant": "F16", "vram": 2.95, "ram": 4.0},
+        "3B-Q4_0": {"params": "3B", "quant": "Q4_0", "vram": 2.68, "ram": 3.5},
+        "3B-Q4_K_M": {"params": "3B", "quant": "Q4_K_M", "vram": 2.77, "ram": 3.8},
+        "3B-F16": {"params": "3B", "quant": "F16", "vram": 6.89, "ram": 8.5}
+      },
+      "context": 131000,
+      "scores": {"knowledge": 3, "math": 3, "code": 3, "reasoning": 3, "language": 4, "multilingual": 3},
+      "tools": true,
+      "languages": ["8 main languages"],
+      "docker": "ai/llama3.2"
+    },
+    "mistral": {
+      "base_name": "Mistral",
+      "variants": {
+        "7B-Q4_0": {"params": "7B", "quant": "Q4_0", "vram": 4.61, "ram": 6.0},
+        "7B-Q4_K_M": {"params": "7B", "quant": "Q4_K_M", "vram": 4.85, "ram": 6.5},
+        "7B-F16": {"params": "7B", "quant": "F16", "vram": 14.10, "ram": 16.0}
+      },
+      "context": 33000,
+      "scores": {"knowledge": 3, "math": 3, "code": 2, "reasoning": 4, "language": 3, "multilingual": 2},
+      "tools": false,
+      "languages": ["Primarily English"],
+      "docker": "ai/mistral"
+    },
+    "qwen2.5": {
+      "base_name": "Qwen2.5",
+      "variants": {
+        "0.5B-F16": {"params": "0.5B", "quant": "F16", "vram": 1.38, "ram": 2.0},
+        "1.5B-F16": {"params": "1.5B", "quant": "F16", "vram": 3.39, "ram": 4.5},
+        "3B-Q4_K_M": {"params": "3B", "quant": "Q4_K_M", "vram": 2.37, "ram": 3.5},
+        "3B-F16": {"params": "3B", "quant": "F16", "vram": 6.33, "ram": 8.0},
+        "7B-Q4_0": {"params": "7B", "quant": "Q4_0", "vram": 4.60, "ram": 6.0},
+        "7B-Q4_K_M": {"params": "7B", "quant": "Q4_K_M", "vram": 4.83, "ram": 6.5},
+        "7B-F16": {"params": "7B", "quant": "F16", "vram": 13.93, "ram": 16.0}
+      },
+      "context": 33000,
+      "scores": {"knowledge": 4, "math": 5, "code": 5, "reasoning": 4, "language": 4, "multilingual": 4},
+      "tools": true,
+      "languages": ["29 languages"],
+      "docker": "ai/qwen2.5"
+    },
+    "llama3.1": {
+      "base_name": "Llama 3.1",
+      "variants": {
+        "8B-Q4_K_M": {"params": "8B", "quant": "Q4_K_M", "vram": 5.33, "ram": 7.0},
+        "8B-F16": {"params": "8B", "quant": "F16", "vram": 15.01, "ram": 18.0}
+      },
+      "context": 131000,
+      "scores": {"knowledge": 3, "math": 4, "code": 4, "reasoning": 4, "language": 4, "multilingual": 3},
+      "tools": true,
+      "languages": ["8 main languages"],
+      "docker": "ai/llama3.1"
+    },
+    "qwen3": {
+      "base_name": "Qwen3",
+      "variants": {
+        "0.6B-Q4_0": {"params": "0.6B", "quant": "Q4_0", "vram": 1.22, "ram": 2.0},
+        "0.6B-Q4_K_M": {"params": "0.6B", "quant": "Q4_K_M", "vram": 1.23, "ram": 2.0},
+        "0.6B-F16": {"params": "0.6B", "quant": "F16", "vram": 1.98, "ram": 3.0},
+        "8B-Q4_0": {"params": "8B", "quant": "Q4_0", "vram": 5.26, "ram": 7.0},
+        "8B-Q4_K_M": {"params": "8B", "quant": "Q4_K_M", "vram": 5.49, "ram": 7.5},
+        "8B-F16": {"params": "8B", "quant": "F16", "vram": 15.24, "ram": 18.0},
+        "14B-Q6_K": {"params": "14B", "quant": "Q6_K", "vram": 11.96, "ram": 14.0}
+      },
+      "context": 41000,
+      "scores": {"knowledge": 5, "math": 5, "code": 4, "reasoning": 5, "language": 4, "multilingual": 5},
+      "tools": true,
+      "languages": ["119 languages"],
+      "docker": "ai/qwen3",
+      "features": ["thinking_modes"]
+    },
+    "mistral-nemo": {
+      "base_name": "Mistral-Nemo",
+      "variants": {
+        "12B-Q4_K_M": {"params": "12B", "quant": "Q4_K_M", "vram": 7.78, "ram": 10.0}
+      },
+      "context": 131000,
+      "scores": {"knowledge": 4, "math": 4, "code": 4, "reasoning": 4, "language": 5, "multilingual": 4},
+      "tools": true,
+      "languages": ["9 languages"],
+      "docker": "ai/mistral-nemo"
+    },
+    "phi4": {
+      "base_name": "Phi4",
+      "variants": {
+        "14B-Q4_0": {"params": "14B", "quant": "Q4_0", "vram": 9.16, "ram": 11.0},
+        "14B-Q4_K_M": {"params": "14B", "quant": "Q4_K_M", "vram": 9.78, "ram": 12.0},
+        "14B-F16": {"params": "14B", "quant": "F16", "vram": 27.97, "ram": 32.0}
+      },
+      "context": 16000,
+      "scores": {"knowledge": 4, "math": 5, "code": 4, "reasoning": 3, "language": 3, "multilingual": 3},
+      "tools": false,
+      "languages": ["8 languages"],
+      "docker": "ai/phi4"
+    },
+    "deepseek-r1-distill-llama": {
+      "base_name": "DeepSeek-R1-Distill-Llama",
+      "variants": {
+        "8B-Q4_0": {"params": "8B", "quant": "Q4_0", "vram": 5.09, "ram": 6.5},
+        "8B-Q4_K_M": {"params": "8B", "quant": "Q4_K_M", "vram": 5.33, "ram": 7.0},
+        "8B-F16": {"params": "8B", "quant": "F16", "vram": 15.01, "ram": 18.0},
+        "70B-Q4_0": {"params": "70B", "quant": "Q4_0", "vram": 38.73, "ram": 45.0},
+        "70B-Q4_K_M": {"params": "70B", "quant": "Q4_K_M", "vram": 41.11, "ram": 48.0}
+      },
+      "context": 131000,
+      "scores": {"knowledge": 5, "math": 5, "code": 5, "reasoning": 5, "language": 5, "multilingual": 4},
+      "tools": true,
+      "languages": ["English, Chinese"],
+      "docker": "ai/deepseek-r1-distill-llama",
+      "features": ["reasoning_optimized"]
+    },
+    "qwq": {
+      "base_name": "QwQ",
+      "variants": {
+        "32B-Q4_0": {"params": "32B", "quant": "Q4_0", "vram": 18.60, "ram": 22.0},
+        "32B-Q4_K_M": {"params": "32B", "quant": "Q4_K_M", "vram": 19.72, "ram": 24.0},
+        "32B-F16": {"params": "32B", "quant": "F16", "vram": 61.23, "ram": 70.0}
+      },
+      "context": 41000,
+      "scores": {"knowledge": 4, "math": 5, "code": 5, "reasoning": 5, "language": 4, "multilingual": 4},
+      "tools": true,
+      "languages": ["29+ languages"],
+      "docker": "ai/qwq",
+      "features": ["agent_capabilities"]
+    },
+    "mxbai-embed": {
+      "base_name": "mxbai-embed-large",
+      "variants": {
+        "335M-F16": {"params": "335M", "quant": "F16", "vram": 0.63, "ram": 1.0}
+      },
+      "context": 512,
+      "scores": {"retrieval": 3, "classification": 4, "clustering": 3, "sts": 5},
+      "languages": ["English"],
+      "docker": "ai/mxbai-embed-large",
+      "type": "embedding"
+    }
+  }
+}

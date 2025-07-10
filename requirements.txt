@@ -1,0 +1,16 @@
+# Core dependencies
+click>=8.0.0
+rich>=13.0.0
+
+# Optional dependencies for enhanced functionality
+psutil>=5.8.0  # Better system memory detection
+GPUtil>=1.4.0  # NVIDIA GPU detection
+PyYAML>=6.0    # YAML export support
+
+# Development dependencies (install with: pip install -r requirements-dev.txt)
+# pytest>=7.0.0
+# pytest-asyncio>=0.21.0
+# pytest-cov>=4.0.0
+# black>=22.0.0
+# flake8>=5.0.0
+# mypy>=1.0.0
